@@ -1,7 +1,6 @@
 # To-do app RestAPI
 
-## Instructions for starting:
-        make build && make run
+## Quickstart:
+    make run 
 
-#### For the first run:
-        make migrate
+*Service available on `localhost:8000`*

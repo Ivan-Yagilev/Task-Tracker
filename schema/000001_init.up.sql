@@ -15,9 +15,9 @@ CREATE TABLE todo_lists
 
 CREATE TABLE users_lists
 (
-        id 	SERIAL 							PRIMARY KEY,
-	CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
-	CONSTRAINT fk_list FOREIGN KEY (list_id) REFERENCES todo_lists (id) ON DELETE CASCADE
+    id      serial                                           not null unique,
+    user_id int references users (id) on delete cascade      not null,
+    list_id int references todo_lists (id) on delete cascade not null
 );
 
 CREATE TABLE todo_items
@@ -30,7 +30,7 @@ CREATE TABLE todo_items
 
 CREATE TABLE lists_items
 (
-        id 	SERIAL 						 PRIMARY KEY,
-        CONSTRAINT fk_item FOREIGN KEY (item_id) REFERENCES todo_items (id) ON DELETE CASCADE,
-	CONSTRAINT fk_list FOREIGN KEY (list_id) REFERENCES todo_lists (id) ON DELETE CASCADE
+    id      serial                                           not null unique,
+    item_id int references todo_items (id) on delete cascade not null,
+    list_id int references todo_lists (id) on delete cascade not null
 );

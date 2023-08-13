@@ -1,4 +1,6 @@
 version: '3'
+# or when an error occurs:
+# version: '2.2'
 
 services:
   backend:
